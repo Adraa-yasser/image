@@ -1,0 +1,18 @@
+{% if messages %}
+{% for mag in messages %}
+<div class="alert alert-{{mag.tags}} alert-dismissible fade show" role="alert">
+    <strong>
+        {% if 'danger' == mag.tags%}
+        Error
+        {% else %}
+        {{ mag.tags|title}}
+        {% endif %}
+    
+     :</strong>
+     {{mag}}
+     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+{% endfor %}
+{% endif %}
